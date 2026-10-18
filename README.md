@@ -1,4 +1,4 @@
-# 开源跑马灯 (OR Light)
+# 开源跑马灯 (Open Light)
 
 一款运行在华为轻智能手表（liteWearable）上的跑马灯应用：把你想展示的任意文字变成循环滚动的字幕，戴在手腕上就能亮出来。
 
@@ -31,7 +31,7 @@ hvigorw.bat assembleApp -m project -p product=default -p buildMode=debug
 
 ## 应用包
 
-[release/OR_light-V3.0-unsigned.app](release/OR_light-V3.0-unsigned.app) 为 V3.0 未签名应用包（内含圆屏与方屏两个 HAP），安装前需用你自己的证书签名。
+[release/open-light-V3.0-unsigned.app](release/open-light-V3.0-unsigned.app) 为 V3.0 未签名应用包（内含圆屏与方屏两个 HAP），安装前需用你自己的证书签名。
 
 ## 工程结构
 

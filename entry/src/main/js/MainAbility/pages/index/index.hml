@@ -1,5 +1,5 @@
 <!--
-  index.hml - OR跑马灯 主界面（启动页）
+  index.hml - Open Light 主界面（启动页）
   布局：整体垂直居中，左右留白；大号时钟 + 文字输入框 + 设置按钮 + 开始启动按钮。
   所有颜色走 data 绑定（bgColor/mainCol/txtCol/btnBg 等），深色主题自动联动。
 -->
