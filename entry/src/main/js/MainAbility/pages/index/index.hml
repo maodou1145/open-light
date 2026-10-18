@@ -1,0 +1,15 @@
+<!--
+  index.hml - OR跑马灯 主界面（启动页）
+  布局：整体垂直居中，左右留白；大号时钟 + 文字输入框 + 设置按钮 + 开始启动按钮。
+  所有颜色走 data 绑定（bgColor/mainCol/txtCol/btnBg 等），深色主题自动联动。
+-->
+<div class="container" style="background-color:{{bgColor}};" onswipe="onSwipe">
+  <!-- 顶部：左侧“跑马灯”，右侧时间（仅时:分） -->
+  <div class="topline" style="margin-bottom:{{clockMB}};">
+    <text class="brand" style="color:{{mainCol}};font-size:{{clockSize}};">开源跑马灯</text>
+    <text class="clock" style="color:{{mainCol}};font-size:{{clockSize}};">{{clock}}</text>
+  </div>
+  <input type="button" class="textinput" style="color:{{tiColor}};background-color:{{tiBg}};border-color:{{tiBd}};" value="{{tiText}}" onclick="openInput" />
+  <input type="button" class="btn-secondary" style="color:{{btnTxt}};background-color:{{btnBg}};" value="设置" onclick="goSettings" />
+  <input type="button" class="btn-primary" style="color:{{pBtnTxt}};background-color:{{pBtnBg}};" value="开始启动" onclick="goStart" />
+</div>

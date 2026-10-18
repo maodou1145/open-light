@@ -1,0 +1,135 @@
+/*
+ * settings.css - 紧凑设置（与参考克隆同款写法：全部显式 px + display:flex + left/top）
+ */
+.container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #E8F2FC;
+}
+.title {
+  width: 420px;
+  height: 36px;
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 6px;
+}
+.row {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 424px;
+  height: 54px;
+  margin-bottom: 6px;
+}
+.lbl {
+  width: 88px;
+  height: 30px;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 12px;   /* 前部文字略微右移，不贴屏幕边缘（总宽=88+12，各行动线对齐） */
+  color: #333333;
+}
+.cur {
+  width: 64px;
+  height: 30px;
+  font-size: 19px;
+  text-align: center;
+  color: #333333;
+}
+.dots {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 234px;   /* = 9 点完整外宽：白/绿等圆点不被压缩裁剪，绿色可点且整体左移到位 */
+  height: 48px;
+}
+.dot {
+  width: 18px;
+  height: 18px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 12px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.slbar {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 316px;
+  height: 46px;
+}
+.slbtn {
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.sltrack {
+  width: 140px;
+  height: 14px;
+  border-radius: 7px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.slfill {
+  height: 14px;
+  border-radius: 7px;
+}
+.vlab {
+  width: 74px;
+  height: 34px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+}
+.st {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #333333;
+}
+.btns {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  width: 424px;
+  height: 46px;
+  margin-top: 8px;
+}
+.navb {
+  width: 140px;
+  height: 42px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 21px;
+  margin-left: 8px;
+  margin-right: 8px;
+}

@@ -1,0 +1,8 @@
+{
+  // 根工程配置。modelVersion 三处一致（本文件 + hvigor/hvigor-config.json5）。
+  // 5.0.4：与 WatchRun_TRAE（模拟器实证可跑）完全一致，保证 IDE 走同一条 FA lite 构建/部署管道。
+  "modelVersion": "6.0.0",
+  "description": "OR跑马灯 - 华为轻智能手表跑马灯应用 (API 10 / FA / liteWearable)",
+  "dependencies": {},
+  "devDependencies": {}
+}

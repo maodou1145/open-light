@@ -1,0 +1,14 @@
+<!--
+  run.hml - 全屏跑马灯（marquee 系统横向滚动）
+  - 根 <stack class="container"> > div.page
+  - 所有尺寸/颜色全部 data 字符串 + 内联绑定（值含 px）
+-->
+<stack class="container">
+  <div class="page" style="background-color: {{bgColor}};" onswipe="onSwipe">
+
+    <!-- 系统 marquee 横向滚动（内容/尺寸在 onInit 内定型，挂载后不再改动） -->
+    <marquee class="mq" scrollamount="{{amt}}" direction="{{dir}}" loop="{{lp}}"
+      style="width: {{mqW}}; height: {{mqH}}; font-size: {{mqFs}}; color: {{mainCol}}; letter-spacing: {{track}}; font-weight: {{fw}};">{{windowText}}</marquee>
+
+  </div>
+</stack>

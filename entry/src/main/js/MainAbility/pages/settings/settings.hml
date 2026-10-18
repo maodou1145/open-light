@@ -1,0 +1,64 @@
+<!--
+  settings.hml - 设置主页（字体颜色/大小/滚动速度/屏幕常亮 + 翻页）
+-->
+<div class="container" style="background-color:{{bgColor}};">
+
+  <!-- 顶部：标题居中 -->
+  <div class="trow">
+    <text class="title">设置</text>
+  </div>
+
+  <!-- 1 字体颜色 -->
+  <div class="row">
+    <text class="lbl">字体颜色</text>
+    <text class="cur" style="color:{{curCol}};">{{curColName}}</text>
+    <div class="dots">
+      <div class="dot" style="background-color:{{cdC0}};border-color:{{cdR0}};" onclick="onColor(0)"></div>
+      <div class="dot" style="background-color:{{cdC1}};border-color:{{cdR1}};" onclick="onColor(1)"></div>
+      <div class="dot" style="background-color:{{cdC2}};border-color:{{cdR2}};" onclick="onColor(2)"></div>
+      <div class="dot" style="background-color:{{cdC3}};border-color:{{cdR3}};" onclick="onColor(3)"></div>
+      <div class="dot" style="background-color:{{cdC4}};border-color:{{cdR4}};" onclick="onColor(4)"></div>
+      <div class="dot" style="background-color:{{cdC5}};border-color:{{cdR5}};" onclick="onColor(5)"></div>
+      <div class="dot" style="background-color:{{cdC6}};border-color:{{cdR6}};" onclick="onColor(6)"></div>
+      <div class="dot" style="background-color:{{cdC7}};border-color:{{cdR7}};" onclick="onColor(7)"></div>
+      <div class="dot" style="background-color:{{cdC8}};border-color:{{cdR8}};" onclick="onColor(8)"></div>
+    </div>
+  </div>
+
+  <!-- 2 字体大小 -->
+  <div class="row">
+    <text class="lbl">字体大小</text>
+    <div class="slbar">
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="decSize"><text class="st">-</text></div>
+      <div class="sltrack" style="background-color:{{sldCol}};"><div class="slfill" style="width:{{sizeFill}};background-color:{{sldSel}};"></div></div>
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="incSize"><text class="st">+</text></div>
+      <text class="vlab">{{vSize}}</text>
+    </div>
+  </div>
+
+  <!-- 3 滚动速度 -->
+  <div class="row">
+    <text class="lbl">滚动速度</text>
+    <div class="slbar">
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="decSpeed"><text class="st">-</text></div>
+      <div class="sltrack" style="background-color:{{sldCol}};"><div class="slfill" style="width:{{spdFill}};background-color:{{sldSel}};"></div></div>
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="incSpeed"><text class="st">+</text></div>
+      <text class="vlab">{{vSpeed}}</text>
+    </div>
+  </div>
+
+  <!-- 4 屏幕常亮 -->
+  <div class="row">
+    <text class="lbl">屏幕常亮</text>
+    <div class="cap">
+      <div class="so" style="background-color:{{keep0}};" onclick="setKeep(0)"><text class="st" style="color:{{keepT0}};">关闭</text></div>
+      <div class="so" style="background-color:{{keep1}};" onclick="setKeep(1)"><text class="st" style="color:{{keepT1}};">开启</text></div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <div class="navb" style="background-color:{{btnBg}};" onclick="goBack"><text class="st" style="color:{{btnTxt}};">返回</text></div>
+    <div class="navb" style="background-color:{{bizCol}};" onclick="goNext"><text class="st" style="color:#FFFFFF;">更多</text></div>
+  </div>
+
+</div>

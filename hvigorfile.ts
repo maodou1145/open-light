@@ -1,0 +1,5 @@
+import { legacyAppTasks } from '@ohos/hvigor-ohos-plugin';
+export default {
+  system: legacyAppTasks,
+  plugins: []
+}

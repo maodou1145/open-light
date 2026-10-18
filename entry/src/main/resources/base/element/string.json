@@ -1,0 +1,6 @@
+{
+  "string": [
+    { "name": "OR_label", "value": "开源跑马灯" },
+    { "name": "OR_desc", "value": "可自定义跑马灯文字效果" }
+  ]
+}
