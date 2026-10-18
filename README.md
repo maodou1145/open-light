@@ -21,6 +21,18 @@ hvigorw.bat assembleHap --mode module -p product=default -p buildMode=debug
 
 签名请在 `build-profile.json5` 中配置自己的 `signingConfigs`（工程内不含签名材料）。
 
+生成 .app 应用包（工程级任务）：
+
+```
+hvigorw.bat assembleApp -m project -p product=default -p buildMode=debug
+```
+
+产物位于 `build/outputs/default/OR_light-default-unsigned.app`。
+
+## 应用包
+
+[release/OR_light-V3.0-unsigned.app](release/OR_light-V3.0-unsigned.app) 为 V3.0 未签名应用包（内含圆屏与方屏两个 HAP），安装前需用你自己的证书签名。
+
 ## 工程结构
 
 ```
