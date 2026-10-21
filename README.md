@@ -13,6 +13,23 @@
 
 ## 构建
 
+### 云端一键构建（推荐，无需本地环境）
+
+仓库内置 GitHub Actions 流水线，**push 即自动构建**，产物在 Actions → Artifacts 下载
+（`open-light-<run>`：未签名 `.app`，放入 `certs/app.p7b` 后额外产出签名 `.hap`）：
+
+```
+actions/checkout → setup-ohos（CLT 6.1.1.280）→ ohpm install --all
+→ hvigorw assembleApp --mode project -p product=default -p buildMode=debug
+→ scripts/clean_config_in_app.py（Lite schema 清洗）
+→ tools/sign/sign-app-to-hap.js（FORCE_P7B_BUNDLE=1，需 certs/app.p7b）
+```
+
+方案移植自 [lantianhcgp/lite-watch-starter](https://github.com/lantianhcgp/lite-watch-starter)（MIT）。
+换证书 = 替换 `certs/app.p7b` 后 push，详见 `certs/README.md`。
+
+### 本地构建（DevEco Studio）
+
 使用 DevEco Studio 打开工程（API 16 / HarmonyOS FA 模式，liteWearable 设备），或命令行：
 
 ```
@@ -31,7 +48,9 @@ hvigorw.bat assembleApp -m project -p product=default -p buildMode=debug
 
 ## 应用包
 
-[release/open-light-V3.0-unsigned.app](release/open-light-V3.0-unsigned.app) 为 V3.0 未签名应用包（内含圆屏与方屏两个 HAP），安装前需用你自己的证书签名。
+[Releases](https://github.com/maodou1145/open-light/releases) 提供已构建的未签名应用包
+（V3.0 起为 `.app.zip`，GitHub Release 不允许 `.app` 扩展名的资产，下载后解压即可），
+安装前需用你自己的证书签名。历史版本见 [release/](release/) 目录。
 
 ## 工程结构
 
