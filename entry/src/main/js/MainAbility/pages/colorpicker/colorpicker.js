@@ -19,8 +19,8 @@ var PICK_TARGET = 'or_pick_target'; // 中转：要改的配置索引（1=文字
 
 // 几何常量：与 hue_wheel_c.png / hue_wheel_r.png 的画布尺寸对应
 var GEO = {
-  circle: { cx: 233, cy: 233, r: 130, h: 466, panelTop: 370 },   // 圆屏 466x466
-  rect:   { cx: 204, cy: 240, r: 130, h: 480, panelTop: 384 }    // 方屏 408x480
+  circle: { cx: 233, cy: 233, r: 130, h: 466, panelTop: 362 },   // 圆屏 466x466
+  rect:   { cx: 204, cy: 240, r: 130, h: 480, panelTop: 382 }    // 方屏 408x480
 };
 var DY = 0;      // 真机校准用的垂直偏移（屏幕坐标 = 页面坐标 + DY）
 
@@ -48,7 +48,7 @@ export default {
   data: {
     isSq: false,
     notSq: true,
-    panelTop: '370px',
+    panelTop: '362px',
     curHex: '#0A6CFF',
     hexTxt: '#0A6CFF',
     dbg: '',
@@ -71,7 +71,7 @@ export default {
       that.notSq = !sq;
       that.cx = g.cx;
       that.cy = g.cy;
-      that.R = g.r;
+      that.R = g.R || g.r;
       that.panelTop = g.panelTop + 'px';
     });
     // 读中转信息：确定后回到发起页，并改对应的颜色位
@@ -80,7 +80,19 @@ export default {
     });
     Cfg.readVal(this.sA, this.fA, PICK_TARGET, function (t) {
       var n = parseInt(t, 10);
-      if (!isNaN(n) && (n === 1 || n === 17)) that.target = n;
+      if (!isNaN(n) && (n === 1 || n === 17)) {
+        that.target = n;
+        // 初始色对齐当前配置中的颜色
+        Cfg.readCfg(that.sA, that.fA, function (cfg) {
+          var c = cfg[n];
+          var pal = (n === 17 ? Cfg.BGPAL : Cfg.PAL);
+          var hex = Cfg.resolveColor(c, pal);
+          if (hex) {
+            that.curHex = hex;
+            that.hexTxt = hex;
+          }
+        });
+      }
     });
   },
   onReady: function () { },

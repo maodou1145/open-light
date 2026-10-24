@@ -10,18 +10,20 @@
   <image class="wheel" src="/common/ui/hue_wheel_r.png" show="{{isSq}}"
     ontouchstart="onTouch" ontouchmove="onTouch"></image>
 
-  <div class="panel" style="margin-top:{{panelTop}};">
-    <div class="row1">
-      <div class="pv"><div class="pvin" style="background-color:{{curHex}};"></div></div>
-      <text class="hex" style="color:{{btnTxt}};">{{hexTxt}}</text>
-      <text class="dbg">{{dbg}}</text>
-    </div>
-    <div class="row2">
-      <div class="cbtn" style="background-color:{{btnBg}};" onclick="cancel">
-        <text class="st" style="color:{{btnTxt}};">取消</text>
+  <div class="panelWrap" style="margin-top:{{panelTop}};">
+    <div class="panel">
+      <div class="row1">
+        <div class="pv"><div class="pvin" style="background-color:{{curHex}};"></div></div>
+        <text class="hex" style="color:{{btnTxt}};">{{hexTxt}}</text>
+        <text class="dbg">{{dbg}}</text>
       </div>
-      <div class="cbtn" style="background-color:{{bizCol}};" onclick="ok">
-        <text class="st" style="color:#FFFFFF;">确定</text>
+      <div class="row2">
+        <div class="cbtn" style="background-color:{{btnBg}};" onclick="cancel">
+          <text class="st" style="color:{{btnTxt}};">取消</text>
+        </div>
+        <div class="cbtn" style="background-color:{{bizCol}};" onclick="ok">
+          <text class="st" style="color:#FFFFFF;">确定</text>
+        </div>
       </div>
     </div>
   </div>
