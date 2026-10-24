@@ -1,0 +1,67 @@
+<!--
+  settings_bg.hml - 背景设置：24 色调色盘 + 版本号（方案 C 浅色玻璃）
+  调色盘与文字设置页同一套交互：40px 选中环容器 + 30px 色块，
+  选中时容器填强调青（浅色块 / 纯黑块都能看清），点击热区也一起放大。
+-->
+<stack class="root">
+  <image class="bg" src="/common/ui/bg_light.png"></image>
+  <div class="container">
+
+  <div class="trow">
+    <text class="title" style="color:{{titleCol}};">背景</text>
+  </div>
+
+  <div class="caprow">
+    <div class="capsq"><div class="capsqin" style="background-color:{{curHex}};"></div></div>
+    <text class="cap" style="color:{{titleCol}};">{{bgCurName}}</text>
+    <div class="pickbtn" style="background-color:{{bizCol}};" onclick="pickColor">
+      <text class="pst" style="color:#FFFFFF;">取色</text>
+    </div>
+  </div>
+
+  <div class="pal">
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR0}};" onclick="onBg(0)"><div class="pdot c0"></div></div>
+      <div class="pwrap" style="background-color:{{pR1}};" onclick="onBg(1)"><div class="pdot c1"></div></div>
+      <div class="pwrap" style="background-color:{{pR2}};" onclick="onBg(2)"><div class="pdot c2"></div></div>
+      <div class="pwrap" style="background-color:{{pR3}};" onclick="onBg(3)"><div class="pdot c3"></div></div>
+      <div class="pwrap" style="background-color:{{pR4}};" onclick="onBg(4)"><div class="pdot c4"></div></div>
+      <div class="pwrap" style="background-color:{{pR5}};" onclick="onBg(5)"><div class="pdot c5"></div></div>
+    </div>
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR6}};" onclick="onBg(6)"><div class="pdot c6"></div></div>
+      <div class="pwrap" style="background-color:{{pR7}};" onclick="onBg(7)"><div class="pdot c7"></div></div>
+      <div class="pwrap" style="background-color:{{pR8}};" onclick="onBg(8)"><div class="pdot c8"></div></div>
+      <div class="pwrap" style="background-color:{{pR9}};" onclick="onBg(9)"><div class="pdot c9"></div></div>
+      <div class="pwrap" style="background-color:{{pR10}};" onclick="onBg(10)"><div class="pdot c10"></div></div>
+      <div class="pwrap" style="background-color:{{pR11}};" onclick="onBg(11)"><div class="pdot c11"></div></div>
+    </div>
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR12}};" onclick="onBg(12)"><div class="pdot c12"></div></div>
+      <div class="pwrap" style="background-color:{{pR13}};" onclick="onBg(13)"><div class="pdot c13"></div></div>
+      <div class="pwrap" style="background-color:{{pR14}};" onclick="onBg(14)"><div class="pdot c14"></div></div>
+      <div class="pwrap" style="background-color:{{pR15}};" onclick="onBg(15)"><div class="pdot c15"></div></div>
+      <div class="pwrap" style="background-color:{{pR16}};" onclick="onBg(16)"><div class="pdot c16"></div></div>
+      <div class="pwrap" style="background-color:{{pR17}};" onclick="onBg(17)"><div class="pdot c17"></div></div>
+    </div>
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR18}};" onclick="onBg(18)"><div class="pdot c18"></div></div>
+      <div class="pwrap" style="background-color:{{pR19}};" onclick="onBg(19)"><div class="pdot c19"></div></div>
+      <div class="pwrap" style="background-color:{{pR20}};" onclick="onBg(20)"><div class="pdot c20"></div></div>
+      <div class="pwrap" style="background-color:{{pR21}};" onclick="onBg(21)"><div class="pdot c21"></div></div>
+      <div class="pwrap" style="background-color:{{pR22}};" onclick="onBg(22)"><div class="pdot c22"></div></div>
+      <div class="pwrap" style="background-color:{{pR23}};" onclick="onBg(23)"><div class="pdot c23"></div></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <text class="lbl" style="color:{{titleCol}};">版本号</text>
+    <text class="cur" style="color:{{bizCol}};">V4.1.0</text>
+  </div>
+
+  <div class="btns">
+    <div class="navb" style="background-color:{{bizCol}};" onclick="goBack"><text class="st" style="color:#FFFFFF;">返回</text></div>
+  </div>
+
+  </div>
+</stack>

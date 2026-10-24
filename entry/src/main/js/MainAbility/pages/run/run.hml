@@ -1,14 +1,19 @@
 <!--
-  run.hml - 全屏跑马灯（marquee 系统横向滚动）
-  - 根 <stack class="container"> > div.page
-  - 所有尺寸/颜色全部 data 字符串 + 内联绑定（值含 px）
+  run.hml - 全屏跑马灯（Canvas 动画）
+  canvas 无子组件；width/height 必须显式给出（默认 0）。
+  横屏模式（上/下方向）：外层 div 挂 .rot90（@keyframes 旋转 90°，Lite 只能这样声明）。
+  取不到 2D 上下文时显示 marquee 兜底。
 -->
-<stack class="container">
-  <div class="page" style="background-color: {{bgColor}};" onswipe="onSwipe">
-
-    <!-- 系统 marquee 横向滚动（内容/尺寸在 onInit 内定型，挂载后不再改动） -->
-    <marquee class="mq" scrollamount="{{amt}}" direction="{{dir}}" loop="{{lp}}"
-      style="width: {{mqW}}; height: {{mqH}}; font-size: {{mqFs}}; color: {{mainCol}}; letter-spacing: {{track}}; font-weight: {{fw}};">{{windowText}}</marquee>
-
+<div class="container" style="background-color:{{bgColor}};" onswipe="onSwipe">
+  <!-- 横屏模式（上/下方向）：静态 class 挂 rot90，Lite 不允许 class 数据绑定 -->
+  <div class="cvwrap rot90" show="{{rotShow}}" style="width: {{cvW}}; height: {{cvH}};">
+    <canvas ref="cvRot" class="cv"
+      style="width: {{cvW}}; height: {{cvH}}; background-color: {{bgColor}};"></canvas>
   </div>
-</stack>
+  <div class="cvwrap" show="{{flatShow}}" style="width: {{cvW}}; height: {{cvH}};">
+    <canvas ref="cv" class="cv"
+      style="width: {{cvW}}; height: {{cvH}}; background-color: {{bgColor}};"></canvas>
+  </div>
+  <marquee class="mq" show="{{mqShow}}" scrollamount="{{mqAmt}}" direction="{{mqDir}}" loop="{{mqLoop}}"
+    style="width: {{mqW}}; height: {{mqH}}; font-size: {{mqFs}}; color: {{mainCol}}; letter-spacing: {{mqTrack}};">{{windowText}}</marquee>
+</div>

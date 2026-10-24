@@ -6,6 +6,8 @@
 **/build
 /.hvigor
 /.cache
+/.design
+/.workbuddy
 .cxx
 /.clangd
 /.clang-format

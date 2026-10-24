@@ -1,0 +1,28 @@
+<!--
+  colorpicker.hml - 取色器（色轮直接吸色）
+  色轮是整屏 PNG（hue_wheel_c.png / hue_wheel_r.png），圆心精确落在屏幕几何中心，
+  因此 touch 事件的 globalX/globalY 减去圆心即可得到色相与饱和度。
+  圆屏/方屏各一张 PNG，用 show 切换（lite 的 image 不能动态改 src）。
+-->
+<stack class="root">
+  <image class="wheel" src="/common/ui/hue_wheel_c.png" show="{{notSq}}"
+    ontouchstart="onTouch" ontouchmove="onTouch"></image>
+  <image class="wheel" src="/common/ui/hue_wheel_r.png" show="{{isSq}}"
+    ontouchstart="onTouch" ontouchmove="onTouch"></image>
+
+  <div class="panel" style="margin-top:{{panelTop}};">
+    <div class="row1">
+      <div class="pv"><div class="pvin" style="background-color:{{curHex}};"></div></div>
+      <text class="hex" style="color:{{btnTxt}};">{{hexTxt}}</text>
+      <text class="dbg">{{dbg}}</text>
+    </div>
+    <div class="row2">
+      <div class="cbtn" style="background-color:{{btnBg}};" onclick="cancel">
+        <text class="st" style="color:{{btnTxt}};">取消</text>
+      </div>
+      <div class="cbtn" style="background-color:{{bizCol}};" onclick="ok">
+        <text class="st" style="color:#FFFFFF;">确定</text>
+      </div>
+    </div>
+  </div>
+</stack>

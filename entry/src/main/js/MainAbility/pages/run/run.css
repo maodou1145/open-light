@@ -1,26 +1,53 @@
 /*
- * run.css - 全屏跑马灯（WatchRun_TRAE 同款范式）
- * 根 stack 撑满；page 为布局容器；尺寸/颜色全部由内联 data 绑定提供。
+ * run.css - 全屏跑马灯（Canvas）
+ * 容器撑满并居中画布；canvas 尺寸由内联 data 绑定提供（默认 0，必须显式设置）。
  */
 .container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
 
-.page {
-  width: 100%;
-  height: 100%;
+/* 画布外层：横屏模式下承载 90° 旋转 */
+.cvwrap {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* marquee 系统滚动，实际尺寸由内联绑定覆盖 */
+.cv {
+  width: 454px;
+  height: 454px;
+}
+
+/*
+ * 横屏模式（上/下方向）：Lite 的 rotate 只能写在 @keyframes 中，
+ * 不能在普通样式里写、也不能动态绑定。这里用一次性动画 + forwards 保持 90°。
+ */
+@keyframes rot90 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.rot90 {
+  animation-name: rot90;
+  animation-duration: 1ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* 兜底 marquee（仅在 canvas 不可用时显示） */
 .mq {
   width: 454px;
   height: 108px;
   font-size: 54px;
-  font-weight: bold;
   color: #0A6CFF;
 }

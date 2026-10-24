@@ -1,0 +1,88 @@
+/*
+ * colorpicker.css - 取色器页样式
+ * 色轮 PNG 铺满全屏；控制面板用 margin-top 推到屏幕底部
+ * （lite 不支持 position/top/left，margin-top 是唯一能偏移的手段）。
+ */
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: #EEF7FB;
+}
+.wheel {
+  width: 100%;
+  height: 100%;
+}
+.panel {
+  width: 320px;
+  height: 96px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 18px;
+}
+.row1 {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+}
+/* 当前色预览：外层浅灰底盘 + 内层色块（不依赖 border-style，
+   ace-loader 会把 border-style 报成 "not a standard attribute"） */
+.pv {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #E4EBEF;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.pvin {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+.hex {
+  width: 130px;
+  height: 32px;
+  font-size: 19px;
+  text-align: left;
+  color: #1F3A44;
+}
+.dbg {
+  width: 130px;
+  height: 22px;
+  font-size: 11px;
+  text-align: right;
+  color: #9BB0B8;
+}
+.row2 {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 46px;
+}
+.cbtn {
+  width: 130px;
+  height: 40px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.st {
+  font-size: 18px;
+  text-align: center;
+  color: #1F3A44;
+}

@@ -1,0 +1,73 @@
+<!--
+  settings_font.hml - 文字设置：24 色调色盘 + 字号（方案 C 浅色玻璃）
+  布局：6 列 × 4 行圆点。每个色块外面包一层 40px 的选中环容器：
+  未选中时容器透明，选中时容器填充强调青 —— 对黑/白/深色块一律高对比，
+  同时把点击热区从 30px 放大到 40px（手表上更好点）。
+-->
+<stack class="root">
+  <image class="bg" src="/common/ui/bg_light.png"></image>
+<div class="container">
+
+  <div class="trow">
+    <text class="title" style="color:{{titleCol}};">文字</text>
+  </div>
+
+  <div class="caprow">
+    <div class="capsq"><div class="capsqin" style="background-color:{{curHex}};"></div></div>
+    <text class="cap" style="color:{{titleCol}};">{{curName}}</text>
+    <div class="pickbtn" style="background-color:{{bizCol}};" onclick="pickColor">
+      <text class="pst" style="color:#FFFFFF;">取色</text>
+    </div>
+  </div>
+
+  <div class="pal">
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR0}};" onclick="onColor(0)"><div class="pdot c0"></div></div>
+      <div class="pwrap" style="background-color:{{pR1}};" onclick="onColor(1)"><div class="pdot c1"></div></div>
+      <div class="pwrap" style="background-color:{{pR2}};" onclick="onColor(2)"><div class="pdot c2"></div></div>
+      <div class="pwrap" style="background-color:{{pR3}};" onclick="onColor(3)"><div class="pdot c3"></div></div>
+      <div class="pwrap" style="background-color:{{pR4}};" onclick="onColor(4)"><div class="pdot c4"></div></div>
+      <div class="pwrap" style="background-color:{{pR5}};" onclick="onColor(5)"><div class="pdot c5"></div></div>
+    </div>
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR6}};" onclick="onColor(6)"><div class="pdot c6"></div></div>
+      <div class="pwrap" style="background-color:{{pR7}};" onclick="onColor(7)"><div class="pdot c7"></div></div>
+      <div class="pwrap" style="background-color:{{pR8}};" onclick="onColor(8)"><div class="pdot c8"></div></div>
+      <div class="pwrap" style="background-color:{{pR9}};" onclick="onColor(9)"><div class="pdot c9"></div></div>
+      <div class="pwrap" style="background-color:{{pR10}};" onclick="onColor(10)"><div class="pdot c10"></div></div>
+      <div class="pwrap" style="background-color:{{pR11}};" onclick="onColor(11)"><div class="pdot c11"></div></div>
+    </div>
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR12}};" onclick="onColor(12)"><div class="pdot c12"></div></div>
+      <div class="pwrap" style="background-color:{{pR13}};" onclick="onColor(13)"><div class="pdot c13"></div></div>
+      <div class="pwrap" style="background-color:{{pR14}};" onclick="onColor(14)"><div class="pdot c14"></div></div>
+      <div class="pwrap" style="background-color:{{pR15}};" onclick="onColor(15)"><div class="pdot c15"></div></div>
+      <div class="pwrap" style="background-color:{{pR16}};" onclick="onColor(16)"><div class="pdot c16"></div></div>
+      <div class="pwrap" style="background-color:{{pR17}};" onclick="onColor(17)"><div class="pdot c17"></div></div>
+    </div>
+    <div class="prow">
+      <div class="pwrap" style="background-color:{{pR18}};" onclick="onColor(18)"><div class="pdot c18"></div></div>
+      <div class="pwrap" style="background-color:{{pR19}};" onclick="onColor(19)"><div class="pdot c19"></div></div>
+      <div class="pwrap" style="background-color:{{pR20}};" onclick="onColor(20)"><div class="pdot c20"></div></div>
+      <div class="pwrap" style="background-color:{{pR21}};" onclick="onColor(21)"><div class="pdot c21"></div></div>
+      <div class="pwrap" style="background-color:{{pR22}};" onclick="onColor(22)"><div class="pdot c22"></div></div>
+      <div class="pwrap" style="background-color:{{pR23}};" onclick="onColor(23)"><div class="pdot c23"></div></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <text class="lbl" style="color:{{titleCol}};">字号</text>
+    <div class="slbar">
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="decSize"><text class="st">-</text></div>
+      <div class="sltrack" style="background-color:{{sldCol}};"><div class="slfill" style="width:{{sizeFill}};background-color:{{sldSel}};"></div></div>
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="incSize"><text class="st">+</text></div>
+      <text class="vlab" style="color:{{titleCol}};">{{vSize}}x</text>
+    </div>
+  </div>
+
+  <div class="btns">
+    <div class="navb" style="background-color:{{bizCol}};" onclick="goBack"><text class="st" style="color:#FFFFFF;">返回</text></div>
+  </div>
+
+  </div>
+</stack>

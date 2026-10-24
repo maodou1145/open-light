@@ -1,8 +1,8 @@
 {
   "app": {
-    "bundleName": "com.example.ormarquee",
+    "bundleName": "com.maodou.openlight",
     "vendor": "example",
-    "version": { "code": 1000000, "name": "1.0.0" }
+    "version": { "code": 4010000, "name": "4.1.0" }
   },
   "deviceConfig": {},
   "module": {
@@ -12,6 +12,11 @@
       {
         "name": "ohos.permission.VIBRATE",
         "reason": "键盘按键的震动反馈",
+        "usedScene": { "when": "inuse" }
+      },
+      {
+        "name": "ohos.permission.INTERNET",
+        "reason": "局域网同步文字与配置（配套手机端）",
         "usedScene": { "when": "inuse" }
       }
     ],
@@ -29,9 +34,13 @@
     "js": [
       {
         "pages": [
+          "pages/welcome/welcome",
           "pages/index/index",
           "pages/settings/settings",
-          "pages/settings2/settings2",
+          "pages/settings_font/settings_font",
+          "pages/settings_bg/settings_bg",
+          "pages/settings_effect/settings_effect",
+          "pages/colorpicker/colorpicker",
           "pages/run/run",
           "pages/keyboard_circle/keyboard",
           "pages/keyboard_rect/keyboard"

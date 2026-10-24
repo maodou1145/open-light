@@ -1,0 +1,192 @@
+/*
+ * settings_bg.css - 背景设置页样式（方案 C 浅色玻璃）
+ */
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: #EEF7FB;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+.trow {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 424px;
+  height: 36px;
+  margin-bottom: 2px;
+}
+.title {
+  width: 356px;
+  height: 34px;
+  font-size: 21px;
+  text-align: center;
+  color: #000000;
+}
+/* 当前色：小色点 + 色名 */
+.caprow {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 30px;
+  margin-bottom: 2px;
+}
+.capsq {
+  width: 20px;
+  height: 20px;
+  background-color: #E4EBEF;
+  border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7px;
+}
+.capsqin {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+.cap {
+  width: 110px;
+  height: 24px;
+  font-size: 16px;
+  text-align: left;
+  color: #1F3A44;
+}
+/* 取色按钮：进色轮页吸任意颜色 */
+.pickbtn {
+  width: 84px;
+  height: 30px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+.pst {
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+}
+/* 调色盘：6 列 × 4 行；每格 40px 选中环容器（未选中透明，选中填强调青） */
+.pal {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 180px;
+}
+.prow {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 45px;
+}
+.pwrap {
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.pdot {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+}
+/* 调色盘静态色块（与 settings_bg.js 的 BGPAL 顺序一一对应） */
+.c0  { background-color: #FFFFFF; }
+.c1  { background-color: #121212; }
+.c2  { background-color: #1E1E1E; }
+.c3  { background-color: #F5F6F8; }
+.c4  { background-color: #0A6CFF; }
+.c5  { background-color: #00BCD4; }
+.c6  { background-color: #9C27B0; }
+.c7  { background-color: #F44336; }
+.c8  { background-color: #4CAF50; }
+.c9  { background-color: #FFF8E1; }
+.c10 { background-color: #E8F2FC; }
+.c11 { background-color: #E8F5E9; }
+.c12 { background-color: #FCE4EC; }
+.c13 { background-color: #F3E5F5; }
+.c14 { background-color: #FFF3E0; }
+.c15 { background-color: #E0F7FA; }
+.c16 { background-color: #263238; }
+.c17 { background-color: #37474F; }
+.c18 { background-color: #4E342E; }
+.c19 { background-color: #1A237E; }
+.c20 { background-color: #004D40; }
+.c21 { background-color: #3E2723; }
+.c22 { background-color: #000000; }
+.c23 { background-color: #FFEB3B; }
+.row {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 424px;
+  height: 50px;
+  margin-top: 6px;
+}
+.lbl {
+  width: 88px;
+  height: 30px;
+  font-size: 19px;
+  text-align: left;
+  margin-left: 12px;
+  color: #1F3A44;
+}
+.cur {
+  width: 120px;
+  height: 30px;
+  font-size: 19px;
+  text-align: center;
+  color: #0A6CFF;
+}
+.st {
+  font-size: 18px;
+  text-align: center;
+  color: #1F3A44;
+}
+.btns {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 424px;
+  height: 46px;
+  margin-top: 10px;
+}
+.navb {
+  width: 140px;
+  height: 42px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 21px;
+}

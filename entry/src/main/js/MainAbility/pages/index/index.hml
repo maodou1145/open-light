@@ -1,15 +1,42 @@
 <!--
-  index.hml - Open Light 主界面（启动页）
-  布局：整体垂直居中，左右留白；大号时钟 + 文字输入框 + 设置按钮 + 开始启动按钮。
-  所有颜色走 data 绑定（bgColor/mainCol/txtCol/btnBg 等），深色主题自动联动。
+  index.hml - Open Light 主界面（方案 C）
+  层次：小品牌字 -> 大时间 -> 玻璃输入胶囊 -> 两个并排玻璃按钮。
+  按下反馈：JS 每 33ms 插值更新图片宽高（Lite 无 transform scale），实现连续缩放动画。
 -->
-<div class="container" style="background-color:{{bgColor}};" onswipe="onSwipe">
-  <!-- 顶部：左侧“跑马灯”，右侧时间（仅时:分） -->
-  <div class="topline" style="margin-bottom:{{clockMB}};">
-    <text class="brand" style="color:{{mainCol}};font-size:{{clockSize}};">开源跑马灯</text>
-    <text class="clock" style="color:{{mainCol}};font-size:{{clockSize}};">{{clock}}</text>
+<stack class="root">
+  <image class="bg" src="/common/ui/bg_light.png"></image>
+
+  <div class="container" style="background-color: rgba(0,0,0,0);" onswipe="onSwipe">
+    <text class="brand" style="color:{{brandCol}};">开源跑马灯</text>
+    <text class="clock" style="color:{{mainCol}};font-size:{{clockSize}};margin-bottom:{{clockMB}};">{{clock}}</text>
+
+    <stack class="fieldWrap" ontouchstart="pressField" ontouchend="releaseField" ontouchcancel="releaseField" onclick="openInput">
+      <div class="imgLayer">
+        <image class="fieldBg" src="/common/ui/field.png" style="width:{{fw}};height:{{fh}};"></image>
+      </div>
+      <div class="txtLayer">
+        <text class="fieldTxt" style="color:{{tiColor}};font-size:{{ffs}};">{{tiText}}</text>
+      </div>
+    </stack>
+
+    <div class="btnrow">
+      <stack class="btnWrap" ontouchstart="pressSet" ontouchend="releaseSet" ontouchcancel="releaseSet" onclick="goSettings">
+        <div class="imgLayer">
+          <image class="btnBg" src="/common/ui/btnS.png" style="width:{{sw}};height:{{sh}};"></image>
+        </div>
+        <div class="txtLayer">
+          <text class="btnTxt" style="color:{{btnTxt}};font-size:{{sfs}};">设置</text>
+        </div>
+      </stack>
+
+      <stack class="btnWrapP" ontouchstart="pressStart" ontouchend="releaseStart" ontouchcancel="releaseStart" onclick="goStart">
+        <div class="imgLayer">
+          <image class="btnBg" src="/common/ui/btnP2.png" style="width:{{pw}};height:{{ph}};"></image>
+        </div>
+        <div class="txtLayer">
+          <text class="btnTxt" style="color:{{pBtnTxt}};font-size:{{pfs}};">开始启动</text>
+        </div>
+      </stack>
+    </div>
   </div>
-  <input type="button" class="textinput" style="color:{{tiColor}};background-color:{{tiBg}};border-color:{{tiBd}};" value="{{tiText}}" onclick="openInput" />
-  <input type="button" class="btn-secondary" style="color:{{btnTxt}};background-color:{{btnBg}};" value="设置" onclick="goSettings" />
-  <input type="button" class="btn-primary" style="color:{{pBtnTxt}};background-color:{{pBtnBg}};" value="开始启动" onclick="goStart" />
-</div>
+</stack>

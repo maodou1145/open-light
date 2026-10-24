@@ -1,10 +1,20 @@
 /*
- * index.css - 主界面：居中布局，浅主题，适配 454x454 圆表（按钮 336 宽，屏内居中）。
- * 配色：背景 #E8F2FC；主题蓝 #0A6CFF；次按钮 #E8EAED；输入框 #FFFFFF。
- * 方形屏(FIT 408x480)：lite 不支持 @media，由 index.js 检测机型后经内联 style
- *   覆盖 clockSize/clockMB 等键（见下「方形屏专用样式」注释块），本文件保留圆屏基准值。
- * 踩坑：根容器 width/height 100% 撑满；内部全部固定 px；justify/align 用 center。
+ * index.css - 主界面（方案 C：毛玻璃浅色）
+ * 层次：小品牌字 -> 大时间 -> 输入胶囊 -> 并排按钮。
+ * 玻璃胶囊/投影与按下缩小态都由 PNG 预烘焙（Lite 无 blur / box-shadow / scale）。
  */
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: #EEF7FB;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -12,73 +22,87 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E8F2FC;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-/* 顶部行：左"跑马灯"，右时间（row 内左右各占半宽，左对齐/右对齐） */
-.topline {
+/* 小品牌字：弱化，让时间成为第一视觉 */
+.brand {
+  width: 320px;
+  height: 26px;
+  font-size: 18px;
+  color: #4E8794;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+/* 大时间：居中 */
+.clock {
   width: 380px;
-  height: 44px;
+  height: 62px;
+  font-size: 46px;
+  color: #0C6E80;
+  text-align: center;
+}
+
+/* 输入胶囊：图片提供玻璃底，外框透明 */
+.fieldWrap {
+  width: 356px;
+  height: 88px;
+}
+.imgLayer {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fieldBg {
+  width: 356px;
+  height: 88px;
+}
+.fieldTxt {
+  font-size: 16px;
+  color: #1F3A44;
+  text-align: center;
+}
+
+/* 文字叠层：在胶囊图片上垂直居中 */
+.txtLayer {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 并排按钮行 */
+.btnrow {
   flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;  /* 圆屏基准；方形屏由内联 clockMB 覆盖 */
+  width: 392px;
+  height: 84px;
+  margin-top: 4px;
 }
-.brand {
+
+.btnWrap {
   width: 190px;
-  height: 44px;
-  font-size: 30px;
-  font-weight: bold;
-  color: #0A6CFF;
-  text-align: left;
+  height: 80px;
+  margin-right: 12px;
 }
-/* 时间 HH:mm（右对齐） */
-.clock {
+.btnWrapP {
   width: 190px;
-  height: 44px;
-  font-size: 30px;      /* 圆屏基准；方形屏 34px 由内联 style 覆盖 */
-  font-weight: bold;
-  color: #0A6CFF;
-  text-align: right;
+  height: 84px;
 }
-
-/* 文字输入框：用 input(type=button) 承载（社区输入法实证可点），点击进入自绘输入页 */
-.textinput {
-  width: 336px;
-  height: 62px;
-  font-size: 15px;
-  color: #333333;
-  text-align: center;
-  background-color: #FFFFFF;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #E0E0E0;
-  border-radius: 16px;
-  margin-bottom: 16px;
+.btnBg {
+  width: 190px;
+  height: 80px;
 }
-
-/* 设置按钮：浅灰胶囊（input type=button，与输入法键同构实证可点） */
-.btn-secondary {
-  width: 336px;
-  height: 50px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #424242;
+.btnTxt {
+  font-size: 17px;
+  color: #1F3A44;
   text-align: center;
-  background-color: #E8EAED;
-  border-radius: 25px;
-  margin-bottom: 16px;
-}
-
-/* 开始启动按钮：主蓝胶囊 */
-.btn-primary {
-  width: 336px;
-  height: 56px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #FFFFFF;
-  text-align: center;
-  background-color: #0A6CFF;
-  border-radius: 28px;
 }

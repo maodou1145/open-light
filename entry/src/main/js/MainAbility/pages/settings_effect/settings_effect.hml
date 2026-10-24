@@ -1,0 +1,57 @@
+<!--
+  settings_effect.hml - 效果设置：滚动速度 / 方向 / 镜像 / 屏幕常亮（方案 C 浅色玻璃）
+-->
+<stack class="root">
+  <image class="bg" src="/common/ui/bg_light.png"></image>
+  <div class="container">
+
+  <div class="trow">
+    <text class="title" style="color:{{titleCol}};">效果</text>
+  </div>
+
+  <!-- 1 滚动速度 -->
+  <div class="row">
+    <text class="lbl" style="color:{{titleCol}};">速度</text>
+    <div class="slbar">
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="decSpeed"><text class="st">-</text></div>
+      <div class="sltrack" style="background-color:{{sldCol}};"><div class="slfill" style="width:{{spdFill}};background-color:{{sldSel}};"></div></div>
+      <div class="slbtn" style="background-color:{{btnBg}};color:{{btnTxt}};" onclick="incSpeed"><text class="st">+</text></div>
+      <text class="vlab" style="color:{{titleCol}};">{{vSpeed}}</text>
+    </div>
+  </div>
+
+  <!-- 2 滚动方向（横竖四向） -->
+  <div class="row">
+    <text class="lbl" style="color:{{titleCol}};">方向</text>
+    <div class="cap4">
+      <div class="so4" style="background-color:{{dir0}};" onclick="setDir(0)"><text class="st" style="color:{{dirT0}};">左</text></div>
+      <div class="so4" style="background-color:{{dir1}};" onclick="setDir(1)"><text class="st" style="color:{{dirT1}};">右</text></div>
+      <div class="so4" style="background-color:{{dir2}};" onclick="setDir(2)"><text class="st" style="color:{{dirT2}};">上</text></div>
+      <div class="so4" style="background-color:{{dir3}};" onclick="setDir(3)"><text class="st" style="color:{{dirT3}};">下</text></div>
+    </div>
+  </div>
+
+  <!-- 3 镜像 -->
+  <div class="row">
+    <text class="lbl" style="color:{{titleCol}};">镜像</text>
+    <div class="cap">
+      <div class="so" style="background-color:{{mir0}};" onclick="setMirror(0)"><text class="st" style="color:{{mirT0}};">正常</text></div>
+      <div class="so" style="background-color:{{mir1}};" onclick="setMirror(1)"><text class="st" style="color:{{mirT1}};">镜像</text></div>
+    </div>
+  </div>
+
+  <!-- 4 屏幕常亮 -->
+  <div class="row">
+    <text class="lbl" style="color:{{titleCol}};">常亮</text>
+    <div class="cap">
+      <div class="so" style="background-color:{{keep0}};" onclick="setKeep(0)"><text class="st" style="color:{{keepT0}};">关闭</text></div>
+      <div class="so" style="background-color:{{keep1}};" onclick="setKeep(1)"><text class="st" style="color:{{keepT1}};">开启</text></div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <div class="navb" style="background-color:{{bizCol}};" onclick="goBack"><text class="st" style="color:#FFFFFF;">返回</text></div>
+  </div>
+
+  </div>
+</stack>

@@ -1,0 +1,31 @@
+<!--
+  welcome.hml - 欢迎页（方案 C：毛玻璃浅色）
+  参考 Nexus HAP 的欢迎动画节奏：
+    背景淡入 -> 标题/副标题上浮淡入 -> 「开始」玻璃按钮延迟出现 -> 3 秒自动进入
+  光环用 border + border-radius 绘制，@keyframes translateY 缓慢漂浮。
+-->
+<stack class="root" onswipe="onSwipe">
+  <image class="bg" src="/common/ui/bg_light.png" style="opacity: {{bgOp}};"></image>
+
+  <div class="layer">
+    <div class="ring r1"></div>
+  </div>
+  <div class="layer">
+    <div class="ring r2"></div>
+  </div>
+
+  <div class="layer col">
+    <text class="brand rise" style="opacity: {{titleOp}};">开源跑马灯</text>
+    <text class="sub rise" style="opacity: {{titleOp}};">OPEN LIGHT</text>
+    <stack class="startBtn riseB" style="opacity: {{btnOp}};"
+      ontouchstart="pressStart" ontouchend="releaseStart" ontouchcancel="releaseStart" onclick="enter">
+      <div class="imgLayer">
+        <image class="wbtnBg" src="/common/ui/wbtn.png" style="width:{{ww}};height:{{wh}};"></image>
+      </div>
+      <div class="txtLayer">
+        <text class="startTxt" style="font-size:{{wfs}};">开始</text>
+      </div>
+    </stack>
+    <text class="hint" style="opacity: {{hintOp}};">轻触进入</text>
+  </div>
+</stack>
