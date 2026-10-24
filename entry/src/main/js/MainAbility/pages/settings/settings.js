@@ -29,7 +29,7 @@ export default {
     var at = function (i) { var v = parseInt(cc[i], 10); return isNaN(v) ? 0 : v; };
     var sz = parseFloat(cc[2]); if (isNaN(sz)) sz = 1.5;
     var sp = Math.max(1, Math.min(10, at(3)));
-    this.fontVal = Cfg.colorName(cc[1], PAL) + ' · ' + sz + 'x';
+    this.fontVal = Cfg.colorName(cc[1], PAL) + ' · ' + (Math.round(sz * 10) / 10).toFixed(1) + 'x';
     this.bgVal = Cfg.colorName(cc[17], BGPAL);
     this.effVal = Math.round(sp * PX_PER_SEC_PER_GEAR) + 'px/秒 · ' + DIRN[Math.max(0, Math.min(3, at(4)))];
   },

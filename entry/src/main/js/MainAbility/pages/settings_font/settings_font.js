@@ -43,10 +43,11 @@ export default {
 
     this.sizeVal = parseFloat(c[2]);
     if (isNaN(this.sizeVal)) this.sizeVal = 1.5;
-    this.vSize = '' + this.sizeVal;
+    this.sizeVal = Math.max(0.5, Math.min(3.0, Math.round(this.sizeVal * 10) / 10));
+    this.vSize = this.sizeVal.toFixed(1);
     var t = (this.sizeVal - 0.5) / 2.5;
     if (t < 0) t = 0; if (t > 1) t = 1;
-    this.sizeFill = Math.round(t * 140) + 'px';
+    this.sizeFill = Math.round(t * 120) + 'px';
   },
   persist: function () {
     this._touched = true;

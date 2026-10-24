@@ -148,16 +148,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 424px;
-  height: 50px;
-  margin-top: 6px;
+  width: 356px;
+  height: 48px;
+  margin-top: 4px;
 }
 .lbl {
-  width: 88px;
+  width: 50px;
   height: 30px;
-  font-size: 19px;
-  text-align: left;
-  margin-left: 12px;
+  font-size: 18px;
+  text-align: center;
   color: #1F3A44;
 }
 .slbar {
@@ -165,11 +164,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 316px;
+  width: 300px;
   height: 44px;
 }
 .slbtn {
-  width: 40px;
+  width: 44px;
   height: 40px;
   flex-direction: column;
   display: flex;
@@ -178,7 +177,7 @@
   border-radius: 20px;
 }
 .sltrack {
-  width: 140px;
+  width: 120px;
   height: 14px;
   border-radius: 7px;
   margin-left: 6px;
@@ -189,9 +188,9 @@
   border-radius: 7px;
 }
 .vlab {
-  width: 76px;
-  height: 32px;
-  font-size: 19px;
+  width: 68px;
+  height: 30px;
+  font-size: 18px;
   text-align: center;
   color: #1F3A44;
 }
